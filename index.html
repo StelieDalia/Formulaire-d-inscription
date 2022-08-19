@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <div class="stepper">
+        <div class="step--1 step-active">Step 1</div>
+        <div class="step--2">Step 2</div>
+        <div class="step--4">Finish</div>
+      </div>
+      <form class="form form-active">
+        <div class="form--header-container">
+          <p class="form--header-text">
+            Information de l'élève
+          </p>
+        </div>
+        <div class="container">
+          <div class="row">
+              <div class="col"> 
+                  <label for="nom" >Nom: <em style="color: red;">*</em></label>
+                  <input type="text" class="form-control border-success" id="Nom" required>
+              </div>
+              <div class="col">
+                  <label for="Prenom">Prenom:</label>
+                  <input type="text" class="form-control border-success" id="Prenom">
+              </div>
+          </div>
+        </div> 
+          
+        <br><br>
+        <div class="container">
+          <div class="row">
+            <div class="col" style="margin-top: 2.5%;">
+              <label for="">Genre:<em style="color: red;">*</em></label>
+              <label for="homme">Homme</label>
+              <input type="radio" name="sexe" id="" required>
+              <label for="femme">Femme</label>
+              <input type="radio" name="sexe" id="" required>
+            </div>  
+            <br>
+            <div class="col">
+              <label for="naissance">Date de naissance<em style="color: red;">*</em></label>
+              <input type="date"class="form-control border-success" id="exampleFormControlInput1"  id="email"  name="" id="date de naissance" min="1990-01-01">
+            </div>
+            <br><br>
+            <div class="col">
+              <label for="Lieu de naissance">Lieu de naissance:<em style="color: red;">*</em></label>
+              <input type="text" class="form-control border-success" id="exampleFormControlInput1"  id="email" id="Lieu de naissance" placeholder="lieu de naissance" required>
+            </div>
+          </div>
+        </div>   
+          <br><br>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+                <label for="Classe">Classe:<em style="color: red;">*</em></label>
+                <select name="" class="form-control border-success" id="exampleFormControlInput1"  id="email" id="">
+                <option value="">--- Selectionner la classe --</option>
+                <option value="">Sixième</option>
+                <option value="">Cinquième</option>
+                <option value="">Quatrième</option>
+                <option value="">Troisième</option>
+                </select>
+            </div><br>
+          </div> 
+        </div>
+        <button class="form__btn" id="btn-1">Next</button>
+      </form>
+      <form class="form">
+        <div class="form--header-container">
+          <h1 class="form--header-title">
+            Information du parent
+          </h1>
+        </div>
+        <div class="container">
+          <div class="row">
+              <div class="col"> 
+                  <label for="nom" >Nom: <em style="color: red;">*</em></label>
+                  <input type="text" class="form-control border-success" id="Nom" required>
+              </div><br>
+              <div class="col">
+                  <label for="Prenom">Prenom:</label>
+                  <input type="text" class="form-control border-success" id="Prenom">
+              </div><br>
+          </div>
+        </div> 
+        <div class="container">
+          <div class="row">
+              <div class="col"> 
+                  <label for="Telephone" >Telephone<em style="color: red;">*</em></label><br>
+                  <input type="text" class="form-control border-success" id="Telephone" required>
+              </div><br>
+              <div class="col">
+                  <label for="Profession">Profession</label>
+                  <input type="tel" class="form-control border-success" id="Profession">
+              </div><br>
+              <div class="col">
+                <label for="Email">Email</label><br>
+                <input type="email" class="form-control border-success" id="Email" style="height: 40px; width:80%; border-radius: 8px; border:solid 1px rgb(72, 72, 72);">
+            </div>
+          </div>
+        </div> 
+      
+        <button class="form__btn" id="btn-2-prev">Previous</button>
+        <button class="form__btn" id="btn-2-next">Envoyer</button>
+      </form>
+      <div class="form--message"></div>
+    </main>
+    <script src="app.js"></script>
+       
+  </body>
+</html>
