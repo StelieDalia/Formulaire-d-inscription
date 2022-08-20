@@ -49,6 +49,23 @@ input,select{
   opacity: 0.8;
 }
 
+.index-btn2{
+  margin: 20px 15px 0 0;
+  background: #0a55ec;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  width: 20%;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.index-btn2:hover{
+  opacity: 0.8;
+}
+
 .step{
   height: 30px;
   width: 30px;
