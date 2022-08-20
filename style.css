@@ -7,7 +7,10 @@
 body{
   background: #eaeaea;
 }
-
+hr {
+  background-color: #333;
+  color: #333;
+}
 form{
   background: #3bacd9;
   margin: 100px auto;
