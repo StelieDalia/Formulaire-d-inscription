@@ -1,58 +1,67 @@
-const formBtn1 = document.querySelector("#btn-1")
-const formBtnPrev2 = document.querySelector("#btn-2-prev")
-const formBtnNext2 = document.querySelector("#btn-2-next")
-const formBtn3 = document.querySelector("#btn-3")
+$(".tab").css("display", "none");
+$("#tab-1").css("display", "block");
 
-function soumission(){
-
-  event.preventDefault()
-  var nom = document.getElementById("nom").value;
-  var prenom = document.getElementById("prenom").value;
-  var classe = document.getElementById("classe").value;
-  var age = document.getElementById("age").value;
-  var genre = document.getElementById("genre").value;
-
-  const eleve = {
-    Nom : nom,
-    Prenom : prenom,
-    classe : classe, 
+function run(hideTab, showTab){
+  if(hideTab < showTab){
+    
+    var currentTab = 0;
+    x = $('#tab-'+hideTab);
+    y = $(x).find("input")
+    for (i = 0; i < y.length; i++){
+      if (y[i].value == ""){
+        $(y[i]).css("background", "#ffdddd");
+        return false;
+      }
+    }
   }
 
-formBtn1.addEventListener("click", function(e) {
-    gotoNextForm(formBtn1, formBtnNext2, 1, 2)
-    e.preventDefault()
-  })
-  
-  formBtnNext2.addEventListener("click", function(e) {
-    gotoNextForm(formBtnNext2, formBtn3, 2, 3)
-    e.preventDefault()
-  })
-  
-  formBtnPrev2.addEventListener("click", function(e) {
-    gotoNextForm(formBtnNext2, formBtn1, 2, 1)
-    e.preventDefault()
-  })
-  
-  const gotoNextForm = (prev, next, stepPrev, stepNext) => {
-    const prevForm = prev.parentElement
-    const nextForm = next.parentElement
-    const nextStep = document.querySelector(`.step--${stepNext}`)
-    const prevStep = document.querySelector(`.step--${stepPrev}`)
-    
-    nextForm.classList.add("form-active")
-    nextForm.classList.add("form-active-animate")
-    prevForm.classList.add("form-inactive")
-    
-    prevStep.classList.remove("step-active")
-    nextStep.classList.add("step-active")
-  
-    setTimeout(() => {
-      prevForm.classList.remove("form-active")
-      prevForm.classList.remove("form-inactive")
-      nextForm.classList.remove("form-active-animate")
-    }, 1000)
+
+  for (i = 1; i < showTab; i++){
+    $("#step-"+i).css("opacity", "1");
+  }
+
+  $("#tab-"+hideTab).css("display", "none");
+  $("#tab-"+showTab).css("display", "block");
+  $("input").css("background", "#fff");
 }
 
 
 
-  
+let nomEleve = document.getElementById("Enom"),
+prenomEleve = document.getElementById("Eprenom"),
+selectSexe = document.getElementById("sexe"),
+dateEleve = document.getElementById("Edate"),
+lieuEleve = document.getElementById("lieuNaiss"),
+selectClasse = document.getElementById("classe");
+
+
+let nomTuteur = document.getElementById("Tnom"),
+prenomTuteur = document.getElementById("Tprenom"),
+ProfessionTuteur = document.getElementById("TProfession"),
+contactTuteur = document.getElementById("Tcontact"),
+emailTuteur = document.getElementById("Temail");
+
+
+
+let post = document.getElementById("regForm");
+
+post.addEventListener("submit", function(event){
+event.preventDefault()
+
+console.log(nomEleve.value);
+console.log(prenomEleve.value);
+console.log(selectClasse.options[selectClasse.selectedIndex].value);
+console.log(dateEleve.value);
+console.log(lieuEleve.value);
+console.log(selectSexe.options[selectSexe.selectedIndex].value);
+
+
+console.log(nomTuteur.value);
+console.log(prenomTuteur.value);
+console.log(ProfessionTuteur.value);
+console.log(contactTuteur.value);
+console.log(emailTuteur.value);
+
+run(2, 1)
+});
+

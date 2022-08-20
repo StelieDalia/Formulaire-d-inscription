@@ -1,118 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <title>Multi Step Form</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
-    <main>
-      <div class="stepper">
-        <div class="step--1 step-active">Step 1</div>
-        <div class="step--2">Step 2</div>
-        <div class="step--4">Fin</div>
-      </div>
-      <form class="form form-active">
-        <div class="form--header-container">
-          <p class="form--header-text">
-            Information de l'élève
-          </p>
-        </div>
-        <div class="container">
-          <div class="row">
-              <div class="col"> 
-                  <label for="nom" >Nom: <em style="color: red;">*</em></label>
-                  <input type="text" class="form-control border-success" id="Nom" required>
-              </div>
-              <div class="col">
-                  <label for="Prenom">Prenom:</label>
-                  <input type="text" class="form-control border-success" id="Prenom">
-              </div>
-          </div>
-        </div> 
-          
-        <br><br>
-        <div class="container">
-          <div class="row">
-            <div class="col" style="margin-top: 2.5%;">
-              <label for="">Genre:<em style="color: red;">*</em></label>
-              <label for="homme">Homme</label>
-              <input type="radio" name="sexe" id="" required>
-              <label for="femme">Femme</label>
-              <input type="radio" name="sexe" id="" required>
-            </div>  
-            <br>
-            <div class="col">
-              <label for="naissance">Date de naissance<em style="color: red;">*</em></label>
-              <input type="date"class="form-control border-success" id="exampleFormControlInput1"  id="email"  name="" id="date de naissance" min="1990-01-01">
-            </div>
-            <br><br>
-            <div class="col">
-              <label for="Lieu de naissance">Lieu de naissance:<em style="color: red;">*</em></label>
-              <input type="text" class="form-control border-success" id="exampleFormControlInput1"  id="email" id="Lieu de naissance" placeholder="lieu de naissance" required>
-            </div>
-          </div>
-        </div>   
-          <br><br>
-        <div class="container">
-          <div class="row">
-            <div class="col">
-                <label for="Classe">Classe:<em style="color: red;">*</em></label>
-                <select name="" class="form-control border-success" id="exampleFormControlInput1"  id="email" id="">
-                <option value="">--- Selectionner la classe --</option>
-                <option value="">Sixième</option>
-                <option value="">Cinquième</option>
-                <option value="">Quatrième</option>
-                <option value="">Troisième</option>
+    <form id="regForm" action="" method="post" autocomplete = "off">
+        <h1 style="margin-left: 17%;">Formulaire d'inscription</h1><br><br>
+        <div class="tab" id = "tab-1">
+            <p>Information de l'Eleve:</p>
+            <p><input placeholder="Nom..." oninput="this.className = ''" name="" id="Enom" ></p>
+            <p><input placeholder="Prénom..." oninput="this.className = ''" name="" id="Eprenom" ></p>
+            <p>
+            <select name="classe" id="sexe">
+                <option value="">Sélctionnez le Sexe...</option>
+                <option value="Masculin">Masculin</option>
+                <option value="Feminin">Feminin</option>
+            </select>
+            </p>
+            <p><input type="date" placeholder="Date de naissance..." oninput="this.className = ''" name="" id="Edate" ></p>
+            <p><input placeholder="Lieu de naissance..." oninput="this.className = ''" name="" id="lieuNaiss" ></p>
+            <p>  
+                <select name="classe" id="classe">
+                    <option value="">Sélctionnez le Classe...</option>
+                    <option value="6ème">6ème</option>
+                    <option value="5ème">5ème</option>
+                    <option value="4ème">4ème</option>
+                    <option value="3ème">3ème</option>
                 </select>
-            </div><br>
-          </div> 
-        </div>
-        <button class="form__btn" id="btn-1">Next</button>
-      </form>
-      <form class="form">
-        <div class="form--header-container">
-          <h1 class="form--header-title">
-            Information du parent
-          </h1>
-        </div>
-        <div class="container">
-          <div class="row">
-              <div class="col"> 
-                  <label for="nom" >Nom: <em style="color: red;">*</em></label>
-                  <input type="text" class="form-control border-success" id="Nom" required>
-              </div><br>
-              <div class="col">
-                  <label for="Prenom">Prenom:</label>
-                  <input type="text" class="form-control border-success" id="Prenom">
-              </div><br>
-          </div>
-        </div> 
-        <div class="container">
-          <div class="row">
-              <div class="col"> 
-                  <label for="Telephone" >Telephone<em style="color: red;">*</em></label><br>
-                  <input type="text" class="form-control border-success" id="Telephone" required>
-              </div><br>
-              <div class="col">
-                  <label for="Profession">Profession</label>
-                  <input type="tel" class="form-control border-success" id="Profession">
-              </div><br>
-              <div class="col">
-                <label for="Email">Email</label><br>
-                <input type="email" class="form-control border-success" id="Email" style="height: 40px; width:80%; border-radius: 8px; border:solid 1px rgb(72, 72, 72);">
+            </p>
+
+            <div class="index-btn-wrapper">
+            <div class="index-btn" onclick="run(1, 2);" style="margin-left: 80%;">Next</div>
             </div>
-          </div>
-        </div> 
-      
-        <button class="form__btn" id="btn-2-prev">Previous</button>
-        <button class="form__btn" id="btn-2-next">Envoyer</button>
-      </form>
-      <div class="form--message"></div>
-    </main>
+        </div>
+
+        <div class="tab" id = "tab-2">
+
+            <p>Information du Tuteur:</p>
+            <p><input placeholder="Nom..." oninput="this.className = ''" name="" id="Tnom" ></p>
+            <p><input placeholder="Prénom..." oninput="this.className = ''" name="" id="Tprenom" ></p>
+            <p><input placeholder="Profession..." oninput="this.className = ''" name="" id="TProfession" ></p>
+            <p><input placeholder="Téléphone..." oninput="this.className = ''" name="" id="Tcontact" ></p>
+            <p><input placeholder="Email..." oninput="this.className = ''" name="" id="Temail" ></p>
+            <div class="index-btn" onclick="run(2, 1);">Previous</div>
+            <button class = "index-btn" type="submit" name="envoyer" style = "background: blue;">Envoyer</button>
+        
+        </div>
+        <div style="text-align:center;">
+            <span class="step" id = "step-1">1</span>
+            <span class="step" id = "step-2">2</span>
+        </div>
+
+    </form>
     <script src="app.js"></script>
-       
   </body>
 </html>
