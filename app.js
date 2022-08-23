@@ -5,9 +5,9 @@ window.addEventListener('load', () => {
 
 
 let eleves = []
-let stockEleve = JSON.parse(localStorage.getItem('eleves')) 
+let stockEleve = JSON.parse(localStorage.getItem('eleves')) //pour stocker les donnees dans local storage
 
-
+// pour recuperer les donnees de l'eleve et du parent
 function recuperer(){
 
     
@@ -33,7 +33,7 @@ let eleve = {
     email : email,
 }
 
-
+// pour envoyer les donnees dans le tableau
 eleves.push(eleve)
 localStorage.setItem("eleves", JSON.stringify(eleves));
  let tableau = document.getElementById('tableau')
@@ -55,7 +55,7 @@ localStorage.setItem("eleves", JSON.stringify(eleves));
 
 }
 
-
+//pour afficher les donnees dans le tableau
 function viewer() {
     for (let index = 0; index < stockEleve.length; index++) {
         let tableau = document.getElementById('tableau')

@@ -96,11 +96,13 @@
   <script src="app.js"></script>
   <script>
     var currentTab = 0; 
-showTab(currentTab); 
+    showTab(currentTab); //Afficher le tableau en cours
 
 function showTab(n) {
+  // Cette fonction affichera le tableau spécifié du formulaire ...
   var x = document.getElementsByClassName("tab");
   x[n].style.display = "block";
+  // ... arranger les boutons Précédent/Suivant :
   if (n == 0) {
     document.getElementById("prevBtn").style.display = "none";
   } else {
@@ -111,42 +113,58 @@ function showTab(n) {
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
+  // ...exécute une fonction qui affiche le bon indicateur d'étape :
   fixStepIndicator(n)
 }
 
 function nextPrev(n) {
+  // Cette fonction déterminera quel tableau afficher
   var x = document.getElementsByClassName("tab");
+  // Quitte la fonction si un champ du tableau en cours est invalide 
   if (n == 1 && !validateForm()) return false;
+  // Masque le tableau en cours
   x[currentTab].style.display = "none";
+  // Augmente ou diminue le tableau en cours de 1 
   currentTab = currentTab + n;
+  // si on atteint la fin du formulaire on fait
   if (currentTab >= x.length) {
+    //alorsle formulaire est soumis 
     document.getElementById("regForm").submit();
     return false;
   }
+  // Sinon, on affiche le bon tableau
   showTab(currentTab);
 }
 
 function validateForm() {
+  // Cette fonction s'occupe de la validation des champs du formulaire
   var x, y, i, valid = true;
   x = document.getElementsByClassName("tab");
   y = x[currentTab].getElementsByTagName("input");
+  // Une boucle qui vérifie chaque champ d'entrée dans le tableau actuel
   for (i = 0; i < y.length; i++) {
+    // Si un champ est vide
     if (y[i].value == "") {
+      // ajoute une classe "invalide" au champ
       y[i].className += " invalid";
+      // définit le statut valide actuel sur faux
       valid = false;
     }
   }
+  // Si le statut valide est vrai, marque l'étape comme terminée et validé
   if (valid) {
     document.getElementsByClassName("step")[currentTab].className += " finish";
   }
-  return valid; 
+  return valid; // renvoie le statut valide
 }
 
 function fixStepIndicator(n) {
+  // Cette fonction supprime la classe "active" de toutes les étapes
   var i, x = document.getElementsByClassName("step");
   for (i = 0; i < x.length; i++) {
     x[i].className = x[i].className.replace(" active", "");
   }
+  //... ajoute la classe "active" à l'étape en cours
   x[n].className += " active";
 }
 
