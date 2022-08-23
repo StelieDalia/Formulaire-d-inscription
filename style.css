@@ -1,54 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
-html {
+html{
   font-family: 'Manrope', sans-serif;
 }
 
 body{
   background-color: #b9c0ff;
 }
-
 #regForm {
-  background-color: #3246fb;
-  margin: 100px auto;
-  padding: 40px;
-  width: 40%;
-  min-width: 300px;
-  border-radius: 1vw ;
-}
+    background-color: #182ef2;
+    margin: 100px auto;
+    padding: 40px;
+    width: 40%;
+    min-width: 300px;
+    border-radius: 1vw ;
+  }
   
-input {
-  padding: 10px;
-  width: 100%;
-  font-size: 17px;
-  font-family: Raleway;
-  border: 1px solid #aaaaaa;
-  border-radius: 0.5vw ;
-}
+  input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    font-family: Raleway;
+    border: 1px solid #aaaaaa;
+    border-radius: 0.5vw ;
+  }
   
-input.invalid {
-  background-color: #ffdddd;
-}
-.tab {
-  display: none;
-}
+  input.invalid {
+    background-color: #ffdddd;
+  }
   
-.step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #02552b;
-  border: none;
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
-}
+  .tab {
+    display: none;
+  }
   
-
-.step.active {
-  opacity: 1;
-}
+  .step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #024d1e;
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
   
-
-.step.finish {
-  background-color: #4083ef;
-}
+  .step.active {
+    opacity: 1;
+  }
+  
+  .step.finish {
+    background-color: #04AA6D;
+  }
