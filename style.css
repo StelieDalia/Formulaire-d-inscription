@@ -3,129 +3,52 @@ html {
   font-family: 'Manrope', sans-serif;
 }
 
-.pos{
-  position: relative;
-}
-
-.modal-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  color: grey;
-  font-size: 2rem;
-  text-decoration: none;
-}
-
-.view:target {
-  visibility: visible;
-  opacity: 1;
-      }
-
-.todo-item label {
-	display: block;
-	margin-right: 1rem;
-	cursor: pointer;
-}
-
-.todo-item .todo-content {
-	flex: 1 1 0%;
-}
-.todo-item .actions {
-	display: flex;
-	align-items: center;
-}
-
-.todo-item .actions .delete {
-	background-color: rgba(184, 58, 68, 0.486);
-	color: #FFF;
-	padding: 0.5rem;
-  border-radius: 0.25rem;
-  cursor: pointer;
-}
-
 body{
-  background: #eaeaea;
+  background-color: #b9c0ff;
 }
 
-form{
-  background: #0b80b6;
+#regForm {
+  background-color: #3246fb;
   margin: 100px auto;
-  padding: 15px 40px 40px 40px;
-  width: 30%;
-  border-radius: 7px;
+  padding: 40px;
+  width: 40%;
+  min-width: 300px;
+  border-radius: 1vw ;
 }
-
-.tab p{
-  font-size: 20px;
-  margin: 0 0 10px 0;
-}
-
-input,select{
-  margin: 10px 0;
+  
+input {
   padding: 10px;
-  box-sizing: border-box;
   width: 100%;
   font-size: 17px;
+  font-family: Raleway;
   border: 1px solid #aaaaaa;
+  border-radius: 0.5vw ;
 }
-
-.index-btn-wrapper{
-  display: flex;
+  
+input.invalid {
+  background-color: #ffdddd;
 }
-
-.index-btn{
-  margin: 20px 15px 0 0;
-  background: #008fe6;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 17px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.index-btn:hover{
-  opacity: 0.8;
-}
-
-.step{
-  height: 30px;
-  width: 30px;
-  line-height: 30px;
-  margin: 0 2px;
-  color: white;
-  background: #009fe3;
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.25;
-}
-
-.edit,
-input[type="checkbox"]{
+.tab {
   display: none;
 }
-
-.view {
-  visibility: hidden;
-  opacity: 0;
-    position: fixed;
-    top: 0; right: 0;
-    bottom: 0; left: 0;
-    margin: auto;
-    transition: all .5s;
-    width: 95%;height: 85%;
-    background-color: rgb(177, 212, 166);
-    padding: 1rem;
+  
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #02552b;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
 }
+  
 
+.step.active {
+  opacity: 1;
+}
+  
 
-#link {
-  background-color: rgb(7, 39, 84);
-  color: white;
-  position: absolute;
-  width: 5%;
-  padding: 0.4rem;
-  text-align: center;
-  margin-left: 8rem;
-  margin-top: 1rem;
+.step.finish {
+  background-color: #4083ef;
 }
