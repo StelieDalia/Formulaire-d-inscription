@@ -1,61 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Formulaire d'inscription</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  </head>
-  <body>
-    <form id="regForm" action="" method="post" autocomplete = "off">
-        <h1 style="margin-left: 17%;">Formulaire d'inscription</h1><br>
-        <hr><br><br>
-        <div class="tab" id = "tab-1">
-          <p>Information de l'élève:</p>
-          <p><input placeholder="Nom..." oninput="this.className = ''" name="" id="Enom" ></p>
-          <p><input placeholder="Prénom..." oninput="this.className = ''" name="" id="Eprenom" ></p>
-          <p>
-          <select name="classe" id="sexe">
-            <option value="">Sexe...</option>
-            <option value="Masculin">Masculin</option>
-            <option value="Feminin">Feminin</option>
-          </select>
-          </p>
-          <p><input type="date" placeholder="Date de naissance..." oninput="this.className = ''" name="" id="Edate" ></p>
-          <p><input placeholder="Lieu de naissance..." oninput="this.className = ''" name="" id="lieuNaiss" ></p>
-          <p>  
-              <select name="classe" id="classe">
-                  <option value="">Classe...</option>
-                  <option value="6ème">6ème</option>
-                  <option value="5ème">5ème</option>
-                  <option value="4ème">4ème</option>
-                  <option value="3ème">3ème</option>
-              </select>
-          </p>
 
-          <div class="index-btn-wrapper">
-          <div class="index-btn" onclick="run(1, 2);" style="margin-left: 80%;">Next</div>
-          </div>
-        </div>
+<head>
+  <meta charset="utf-8">
+  <title>Formulaire</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
 
-        <div class="tab" id = "tab-2">
+<body>
 
-          <p>Information du tuteur:</p>
-          <p><input placeholder="Nom..." oninput="this.className = ''" name="" id="Tnom" ></p>
-          <p><input placeholder="Prénom..." oninput="this.className = ''" name="" id="Tprenom" ></p>
-          <p><input placeholder="Profession..." oninput="this.className = ''" name="" id="TProfession" ></p>
-          <p><input placeholder="Téléphone..." oninput="this.className = ''" name="" id="Tcontact" ></p>
-          <p><input placeholder="Email..." oninput="this.className = ''" name="" id="Temail" ></p>
-          <div class="index-btn2" onclick="run(2, 1);">Previous</div>
-          <button class = "index-btn" type="submit" name="envoyer" style = "background: blue;">Envoyer</button>
-        
-        </div>
-        <div style="text-align:center;">
-            <span class="step" id = "step-1">1</span>
-            <span class="step" id = "step-2">2</span>
-        </div>
+  <form id="regForm" action="" method="post" autocomplete="off">
+    <h1 align=center>Formulaire d'inscription:</h1>
 
-    </form>
-    <script src="app.js"></script>
-  </body>
+   
+
+    <div class="tab" id="tab-1">
+      <p>Information de l'Eleve:</p>
+
+      <input type="text" placeholder="Nom" name="content" id="nom" />
+      <input type="text" placeholder="Prenom" name="content" id="prenom" />
+      <select name="" id="sexe">
+        <option value="">Sexe</option>
+        <option value="Masculin">Masculin</option>
+        <option value="Feminin">Feminin</option>
+      </select>
+      <input type="text" placeholder="Lieu de naissance" name="content" id="lieuNaiss" />
+      <input type="date" placeholder="Date de naissance" name="content" id="date" />
+      <select name="classe" id="classe">
+        <option value="">Classe</option>
+        <option value="6ème">6ème</option>
+        <option value="5ème">5ème</option>
+        <option value="4ème">4ème</option>
+        <option value="3ème">3ème</option>
+      </select>
+      <div class="index-btn-wrapper">
+        <div class="index-btn" onclick="run(1, 2);">Suivant</div>
+      
+      </div>
+
+    </div>
+
+    <div class="tab" id="tab-2">  
+      <p>Information du Tuteur:</p>
+      <input type="text" placeholder="Nom" name="content" id="Tnom" />
+      <input type="text" placeholder="Prenom" name="content" id="Tprenom" />
+      <input type="text" placeholder="Profession" name="content" id="TProfession" />
+      <input type="text" placeholder="Contact" name="content" id="Tcontact" />
+      <input type="text" placeholder="Email" name="content" id="Temail" />
+      <div class="index-btn" onclick="run(2, 1);">Précédant</div>
+      <button class="index-btn" type="submit" name="submit" style="background: rgb(109, 109, 255);">Envoyer</button>
+                
+    </div>
+    <div style="text-align:center;">
+      <span class="step" id="step-1">1</span>
+      <span class="step" id="step-2">2</span>
+    </div>
+
+  </form>
+
+
+<section class="inscr-list pos">
+  <h3>Listes d'inscrit</h3>
+  <a href="#"><button type="button" class="modal-close" data-dismiss="modal">&times;</button></a>
+  <div class="list" id="inscr-list"></div>
+</section>
+
+  <script src="app.js"></script>
+
+</body>
+
 </html>
